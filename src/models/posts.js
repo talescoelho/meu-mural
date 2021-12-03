@@ -1,6 +1,7 @@
 const Post = (sequelize, DataTypes) => {
   const newPost = sequelize.define('Post', {
     content: DataTypes.STRING,
+    userId: { type: DataTypes.INTEGER, foreignKey: true },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },

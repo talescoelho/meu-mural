@@ -1,6 +1,8 @@
 const Comment = (sequelize, DataTypes) => {
   const newComment = sequelize.define('Comment', {
     comment: DataTypes.STRING,
+    userId: { type: DataTypes.INTEGER, foreignKey: true },
+    postId: { type: DataTypes.INTEGER, foreignKey: true },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },
